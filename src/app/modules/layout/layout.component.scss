@@ -3,7 +3,7 @@
 @import "../../scss/variables";
 
 .main-section {
-  background-image: linear-gradient(-180deg, #F7941F 0%, #F26C22 100%);
+  background-image: linear-gradient(-180deg, #D77F34 0%, #fff 100%);
   height: 80vh;
 
   @include media-breakpoint-down(xl) {
@@ -61,4 +61,3 @@
     width: 50%; /* 6 columns */
   }
 }
-
