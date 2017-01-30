@@ -1,0 +1,5 @@
+<alert *ngFor="let alert of alertService.alerts; let i = index" [type]="alert.type + ' alert-sm'"
+       (close)="alertService.closeAlert(i)"
+       dismissible="false">
+    <div [innerHTML]="alert.msg"></div>
+</alert>

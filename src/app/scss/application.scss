@@ -1,0 +1,525 @@
+@import "variables";
+@import "mixins";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../node_modules/font-awesome/scss/font-awesome";
+@import "../../../node_modules/glyphicons-halflings/scss/glyphicons-halflings";
+@import "../../../node_modules/animate.css/animate";
+//@import "../../../node_modules/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox";
+
+// Custom fonts
+@font-face {
+  font-family: lato-light;
+  src: url(../../assets/fonts/lato/Lato-Light.ttf);
+}
+
+@font-face {
+  font-family: lato-bold;
+  src: url(../../assets/fonts/lato/Lato-Bold.ttf);
+}
+
+@font-face {
+  font-family: lato-semi-bold;
+  src: url(../../assets/fonts/lato/Lato-Semibold.ttf);
+}
+
+@font-face {
+  font-family: lato-medium;
+  src: url(../../assets/fonts/lato/Lato-Medium.ttf);
+}
+
+@font-face {
+  font-family: lato-regular;
+  src: url(../../assets/fonts/lato/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: glyphicons;
+  src: url(../../assets/fonts/glyphicons/glyphicons-halflings-regular.ttf);
+}
+
+@font-face {
+  font-family: font-awesome;
+  src: url(../../assets/fonts/font-awesome/fontawesome-webfont.ttf);
+}
+
+// Carousel indicators
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 15;
+  width: $carousel-indicators-width;
+  padding-left: 0;
+  margin-left: -($carousel-indicators-width / 2);
+  text-align: center;
+  list-style: none;
+
+  li {
+    padding: 20px;
+    width: 40px;
+    height: 10px;
+    margin: 0px 5px;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-color: rgba(0, 0, 0, 0) !important;
+
+
+    div{
+      width: 40px;
+      height: 2px;
+      opacity: 0.4;
+      text-indent: -999px;
+      cursor: pointer;
+      border-radius: 2px;
+      //// IE9 hack for event handling
+      //// Internet Explorer 9 does not properly handle clicks on elements with a `background-color` of `transparent`,
+      //// so we use `rgba(0,0,0,0)` instead since it's a non-buggy equivalent.
+      //// See https://developer.mozilla.org/en-US/docs/Web/Events/click#Internet_Explorer
+      background-color: rgba(0, 0, 0, 0); // IE9
+      border: 1px solid #fff !important;
+      display: block;
+      position: relative;
+      right: 20px;
+    }
+
+  }
+
+  body.modal1-on  {overflow: hidden;}
+
+  .active {
+    padding: 20px ;
+    width: 40px;
+    height: 10px;
+    margin: 0px 5px;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-color: rgba(0, 0, 0, 0) !important;
+
+    div{
+      width: 40px;
+      height: 3px;
+      opacity: 1;
+      text-indent: -999px;
+      background-color: $carousel-indicator-active-bg !important;
+      display: block;
+      cursor: pointer;
+      position: relative;
+      right: 20px;
+    }
+
+  }
+}
+
+// Buttons
+
+.btn-primary {
+  font-size: 14px;
+  font-family: lato-regular, sans-serif;
+  letter-spacing: 2px;
+
+  &:hover {
+    background-color: #F7941F;
+    color: #fff;
+    border-color: #F7941F;
+  }
+  &:active, &:focus {
+    background-color: $brand-primary;
+    outline-color: $brand-primary;
+    color: #fff;
+    border-color: $brand-primary;
+  }
+
+  &:disabled {
+    outline-color: #F7F7F7;
+    background: #F7F7F7;
+    border: 1px solid #E7E7E7;
+    color: #E2E2E2;
+  }
+}
+
+.btn-primary:disabled:hover, .btn-primary:disabled:focus, .btn-primary:disabled.focus, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus {
+  outline-color: #F7F7F7;
+  background: #F7F7F7;
+  border: 1px solid #E7E7E7;
+  color: #E2E2E2;
+}
+.btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus {
+  background-color: $brand-primary;
+  outline-color: $brand-primary;
+  color: #fff;
+  border-color: $brand-primary;
+}
+
+// Extra icons
+
+.icon-burger {
+  @include icon('../../assets/icon/ic_burger.png', 25px, 25px);
+}
+
+.icon-check {
+  @include icon('../../assets/icon/ic_check.png', 25px, 25px);
+}
+
+// Floating Label
+
+.float-input-field {
+  display: block;
+  position: relative;
+  textarea:focus ~ label,
+  textarea:focus ~ .label-counter,
+  textarea.ui-state-filled ~ label,
+  textarea.ui-state-filled ~ .label-counter,
+  input:focus ~ label,
+  input.ui-state-filled ~ label {
+    top: -20px;
+    font-size: 12px;
+  }
+
+  label {
+    color: #848689;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 1px;
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+  }
+}
+
+textarea,
+input[type] {
+  font-family: lato-regular, sans-serif;
+  background: transparent;
+  padding-bottom: 6px;
+  padding-left: 2px;
+  font-size: 14px;
+  border: 0 solid #bdbdbd;
+  border-bottom-width: 1px;
+  @include transition(border-color .3s);
+  @include border-radius(0px);
+
+  &:focus {
+    border-width: 0 0 2px 0;
+    border-color: $brand-primary;
+    color: #464648;
+  }
+
+  &:disabled {
+    border-bottom: 1px dotted;
+  }
+}
+
+.form-control {
+
+}
+
+// Checkbox
+.control {
+  position: relative;
+  display: block;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+label.control {
+  margin-bottom: 0px !important;
+  top: 10px;
+}
+
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border: 1px solid #000000;
+}
+
+.control--radio .control__indicator {
+  border-radius: 50%;
+}
+
+/* Hover and focus states */
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  background: #F4F4F4;
+}
+
+/* Checked state */
+.control input:checked ~ .control__indicator {
+  background: #ffffff;
+}
+
+/* Hover state whilst checked */
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+  background: #F4F4F4;
+}
+
+/* Disabled state */
+.control input:disabled ~ .control__indicator {
+  pointer-events: none;
+  opacity: .6;
+  background: #e6e6e6;
+}
+
+/* Check mark */
+.control__indicator:after {
+  position: absolute;
+  display: none;
+  content: "\f00c ";
+  font-family: font-awesome;
+  font-weight: 100;
+  font-size: 14px;
+  //line-height:1;
+  //margin:10px;
+  //display:inline-block;
+}
+
+/* Show check mark */
+.control input:checked ~ .control__indicator:after {
+  display: block;
+
+}
+
+/* Checkbox tick */
+.control--checkbox .control__indicator:after {
+  top: 0px;
+  left: 2px;
+  width: 3px;
+  //height: 8px;
+  //transform: rotate(45deg);
+  //border: solid #fff;
+  //border-width: 0 2px 2px 0;
+}
+
+/* Disabled tick colour */
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: #7b7b7b;
+}
+
+/* Radio button inner circle */
+.control--radio .control__indicator:after {
+  top: 7px;
+  left: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* Disabled circle colour */
+.control--radio input:disabled ~ .control__indicator:after {
+  background: #7b7b7b;
+}
+
+//DropDown Select
+
+.ui-dropdown {
+  box-sizing: border-box;
+  @include border-radius(0);
+  display: block;
+  padding: 0.5rem 0rem;
+  line-height: 1.0;
+  color: #848689;
+  background-color: #fff;
+  background-clip: padding-box;
+
+  .ui-dropdown-trigger {
+    height: 36px;
+    width: 35px;
+    font-size: 14px;
+    margin-top: 0px;
+    padding: 0;
+    bottom: 33px;
+    position: relative;
+    float: right;
+
+    &.ui-state-hover {
+      @include hover-element();
+    }
+
+    .fa {
+      font-family: font-awesome;
+      height: 14px;
+      width: 14px;
+      margin-top: 0;
+      font-size: 18px;
+      position: relative;
+      top: 2px;
+      left: 12px;
+    }
+    //.fa:active, .fa:hover, .ui-c {
+    //  content: "\f00c" !important;
+    //}
+  }
+
+  .ui-dropdown-label {
+    &.ui-inputtext {
+      margin-right: 20px;
+      position: relative;
+      bottom: 30px;
+    }
+
+  }
+}
+
+.ui-dropdown-panel {
+  @include border-radius(3);
+  padding: 2px;
+  background-color: #ffffff;
+  height: auto;
+  margin-bottom: 0 !important;
+  position: absolute;
+  width: 95%;
+  top: 36px !important;
+  left: 15px !important;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
+
+  .ui-dropdown-items-wrapper {
+    max-height: 1000px !important;
+  }
+
+  .ui-dropdown-list {
+    background-color: #ffffff;
+    padding: 2px;
+    list-style: none;
+  }
+
+  .ui-dropdown-item {
+    font-size: 15px;
+    padding: 12px;
+    height: 40px;
+    @include transition(background-color .3s);
+
+    &.ui-state-hover {
+      @include hover-element();
+      background-color: #F6F6F6;
+    }
+
+    &.ui-state-highlight {
+      //background-color: $accentColor;
+      background-color: #F6F6F6;
+      color: $brand-primary;
+      //color: $accentTextColor;
+    }
+  }
+
+  .ui-dropdown-item-group {
+    padding: 10px;
+  }
+
+  &.ui-shadow {
+    //@include overlay-input-shadow();
+  }
+
+  .ui-dropdown-filter-container {
+    .fa {
+      top: 5px;
+      right: 8px;
+    }
+  }
+}
+
+.ui-helper-hidden-accessible > input {
+  width: 100%;
+
+}
+
+.ui-helper-hidden-accessible > select {
+  display: none;
+}
+
+textarea {
+  width: 100%;
+}
+
+textarea:focus, input[type]:focus {
+  border-color: $brand-primary;
+  border-width: 0 0 1px 0;
+  outline-width: 0;
+  outline: none;
+}
+
+.label-counter {
+  float: right !important;
+  color: #a6a8ab;
+  font-size: 12px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 90%;
+  top: 2px;
+}
+
+.modal-title {
+  font-family: lato-light;
+  font-size: 48px;
+  font-weight: 100;
+  color: #464648;
+}
+
+.icon-padding {
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.btn-modal {
+  font-size: 14px;
+}
+
+.modal-content {
+  @include media-breakpoint-up(sm) {
+    padding: 20px 90px 20px 90px;
+  }
+}
+
+a:not([href]):not([tabindex]) {
+  color: $brand-primary;
+  &:hover {
+    color: $brand-primary;
+  }
+}
+
+a.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 14px;
+  color: $brand-primary;
+  opacity: 1;
+  text-shadow: none;
+
+  &:hover {
+    color: $brand-primary;
+  }
+}
+
+.text-body-modal {
+  font-family: Lato-Regular;
+  font-size: 14px;
+  color: #848689;
+  letter-spacing: -0.26px;
+  line-height: 20px;
+  padding: 15px;
+}
+
+.modal-header {
+  text-align: center;
+  border-bottom-width: 0;
+}
+
+input:required {
+  box-shadow:none;
+}

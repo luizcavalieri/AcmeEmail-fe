@@ -1,0 +1,48 @@
+@import "../../../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../../scss/variables";
+
+// Logo
+.logo {
+  @include media-breakpoint-down(xl) {
+    height: 43px;
+    width: 184px;
+    content: url('../../../../assets/img/logo-184x43.png');
+  }
+  @include media-breakpoint-down(lg) {
+
+    height: 32px;
+    width: 138px;
+    content: url('../../../../assets/img/logo-138x32.png');
+  }
+}
+
+// NavbarComponent
+.navbar {
+  background: transparent;
+
+  @include media-breakpoint-down(xl) {
+    padding: 18px 134px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding: 17px 44px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 17px 15px;
+  }
+  .nav-link {
+    padding: 15px 15px;
+    font-family: lato-bold, serif;
+    color: #FFFFFF;
+    letter-spacing: 1.75px;
+
+    @include media-breakpoint-down(xl) {
+      font-size: 16px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 14px;
+    }
+  }
+}

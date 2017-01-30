@@ -1,0 +1,64 @@
+@import "../../../../node_modules/bootstrap/scss/mixins/breakpoints";
+//@import "../../../../node_modules/bootstrap/scss/mixins/clearfix";
+@import "../../scss/variables";
+
+.main-section {
+  background-image: linear-gradient(-180deg, #F7941F 0%, #F26C22 100%);
+  height: 80vh;
+
+  @include media-breakpoint-down(xl) {
+    min-height: 648px
+  }
+
+  @include media-breakpoint-down(lg) {
+    min-height: 540px
+  }
+
+  padding: 0;
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 90%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
+

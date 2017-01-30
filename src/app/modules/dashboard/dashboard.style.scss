@@ -1,0 +1,262 @@
+@import "../../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../../../node_modules/bootstrap/scss/mixins/clearfix";
+@import "../../scss/variables";
+
+@mixin font-size-bp-down($xl-size,$lg-size,$sm-size) {
+  @include media-breakpoint-down(xl) {
+    font-size: $xl-size;
+  }
+
+  @include media-breakpoint-down(lg) {
+    font-size: $lg-size;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: $sm-size;
+  }
+}
+
+.main-section h1 {
+  letter-spacing: 0.89px;
+  font-family: lato-light, sans-serif;
+  color: #FFFFFF;
+
+  @include font-size-bp-down(64px, 54px, 30px);
+
+}
+
+.main-section p {
+  letter-spacing: 0.34px;
+  color: white;
+
+  @include font-size-bp-down(18px, 18px, 16px);
+
+}
+
+// Carousel
+.carousel-item {
+  height: 70vh;
+
+  @include media-breakpoint-down(xl) {
+    min-height: 560px;
+
+  }
+
+  @include media-breakpoint-down(lg) {
+    min-height: 460px
+  }
+
+  .sided {
+    @include media-breakpoint-down(xl) {
+      margin-left: 100px;
+    }
+    @include media-breakpoint-down(lg) {
+      margin-left: 10px;
+    }
+  }
+}
+
+// Jumbotron
+.jumbotron {
+  background: transparent;
+  @include media-breakpoint-down(xl) {
+    padding-top: 10%;
+  }
+  .btn {
+    &:hover, &:focus, &:active {
+      background-color: transparent;
+      border-color: #ffffff;
+      outline-color: #ffffff;
+    }
+  }
+}
+
+.sections {
+  @include media-breakpoint-down(xl) {
+    margin: 96px 234px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    margin: 78px 124px;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin: 76px 83px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin: 24px 15px;
+  }
+
+  h1 {
+    color: #464648;
+
+    @include font-size-bp-down(54px, 48px, 30px);
+  }
+}
+
+.our-service-row {
+  @include media-breakpoint-down(xl) {
+    margin: 8rem 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin: 3rem -50px;
+  }
+}
+
+/*
+  Cards
+
+ */
+
+.card {
+  position: relative;
+  display: block;
+  margin-bottom: $card-spacer-y;
+  background-color: $card-bg;
+  border: none;
+}
+
+.card-block {
+  @include clearfix;
+  padding: $card-spacer-x;
+}
+
+.card-title {
+  font-family: lato-semi-bold, sans-serif;
+  margin-bottom: $card-spacer-y;
+
+  @include font-size-bp-down(18px, 16px, 16px)
+
+}
+
+.card-text {
+  font-family: lato-regular, sans-serif;
+  color: #848689;
+  line-height: 24px;
+  letter-spacing: 0.55px;
+
+  @include font-size-bp-down(16px, 14px, 14px);
+}
+
+/*
+ * Images
+ *
+ */
+
+@mixin images($url-xl,$url-lg) {
+  @include media-breakpoint-down(xl) {
+    content: url($url-xl);
+  }
+  @include media-breakpoint-down(lg) {
+    content: url($url-lg);
+  }
+
+}
+
+
+.art-web_development {
+  width: 220px;
+  height: 164px;
+  @include images(
+                  '../../assets/img/art_web_development.png',
+                  '../../assets/img/art_web_development_hd.png'
+  );
+
+}
+
+.art-mobile_development {
+  width: 137px;
+  height: 270px;
+  @include images(
+                  '../../assets/img/art_mobile_development.png',
+                  '../../assets/img/art_mobile_development_hd.png'
+  );
+
+}
+
+.art-technology {
+  width: 194px;
+  height: 194px;
+  @include images(
+                  '../../assets/img/art_technology_hd.png',
+                  '../../assets/img/art_technology.png'
+  );
+}
+
+.art-hosting {
+  width: 200px;
+  height: 149px;
+
+  @include images(
+                  '../../assets/img/art_hosting_hd.png',
+                  '../../assets/img/art_hosting.png'
+  );
+}
+
+.art-outsourcing {
+  width: 174px;
+  height: 174px;
+  @include images(
+                  '../../assets/img/art_outsourcing_hd.png',
+                  '../../assets/img/art_outsourcing.png'
+  );
+}
+
+.art-api {
+  width: 146px;
+  height: 92px;
+  @include images(
+                  '../../assets/img/art_api_hd.png',
+                  '../../assets/img/art_api.png'
+  );
+}
+
+.art-project_rescue {
+  width: 165px;
+  height: 165px;
+  @include images(
+                  '../../assets/img/art_project_rescue_hd.png',
+                  '../../assets/img/art_project_rescue.png'
+  );
+}
+
+/*work session*/
+
+.work-container {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1200px) {
+  .work-container {
+    width: 80%;
+    margin: auto;
+  }
+
+}
+
+#work {
+  width: 100%;
+  margin: auto;
+  padding: 0 !important;
+}
+
+.work-1 {
+  //background-image: url("../../../assets/img/work_1.jpg");
+  //background-position: center;
+  //background-repeat: no-repeat;
+  //background-size: cover;
+  width: 100%;
+  height: auto;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.contact-us {
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 30px;
+  }
+}

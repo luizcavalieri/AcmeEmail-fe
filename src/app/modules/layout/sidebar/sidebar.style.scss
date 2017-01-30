@@ -1,0 +1,25 @@
+@import "../../../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../../../../node_modules/bootstrap/scss/mixins/hover";
+@import "../../../scss/variables";
+
+// Base class
+//
+// Kickstart any navigation component with a set of style resets. Works with
+// `<nav>`s or `<ul>`s.
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: inline-block;
+  margin: 15px 0;
+  font-size: 18px;
+  color: #464648;
+
+  @include hover-focus {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "global": {
+    "title": "Oi Angular 2 com ng2-translate!"
+  },
+  "ourservices": {
+    "web_development": {
+      "cardtitle": "Web Development",
+      "cardtext": "From Frontend to Backend development - we are a full-stack team. We design, develop, test and deliver projects using cutting edge frameworks. We ensure that your software is compatible with the most modern browsers."
+    },
+    "mobile_development": {
+      "cardtitle": "Mobile Development",
+      "cardtext": "We have a responsive design approach - whether you want a native or hybrid mobile app we are here to help you get the best product."
+    },
+    "technology": {
+      "cardtitle": "Our Technologies",
+      "cardtext": "In the backend we speak NodeJS, Java and Grails. In the frontend, we are experts in AngularJS 2, ReactJS and plain vanilla JavaScript."
+    },
+    "hosting": {
+      "cardtitle": "Hosting / Continuous Delivery",
+      "cardtext": "With our specialised team of Amazon Web Services (AWS) DevOps we are able to look after the architecture, hosting and scaling of your web application."
+    },
+    "outsourcing": {
+      "cardtitle": "Outsourcing",
+      "cardtext": "Let our team of experts develop your application so you can focus on the core aspects of your business. Or if your company has a dev team we can help speed up that past due project."
+    },
+    "api": {
+      "cardtitle": "API Integrations",
+      "cardtext": "Why reinvent the wheel? From Payment Gateways to Address validation or a simple Email Templating. We have implemented integration with hundreds of APIs. Or, if you just want your suppliers or customers to automate some processes we can also build API's for your applications. We follow the best security and industry standards."
+    },
+    "project_rescue": {
+      "cardtitle": "Rescue an existing Project",
+      "cardtext": "This is for ongoing and/or unfinalised projects. We asses the current project situation and make some recommendations of how it should be handled so it achieves your business objectives."
+    }
+  },
+  "aboutus": {
+    "text": "Comprised of the best and the brightest, each member of the LambdaS IO team is recognized for their love of making the abstract becomes real. We are believers that one size doesn't' fit all and that's why we are specialised in custom software development - if you want a tailored and unique software solution we are here to assist your business. From early stage Startups to well-established Enterprises, we've got you covered. We recruited a new generation of IT Professionals into our ranks and our numbers are growing as highly qualified professionals continue to join our cause."
+  }
+}
