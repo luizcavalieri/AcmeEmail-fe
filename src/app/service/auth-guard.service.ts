@@ -1,10 +1,10 @@
 /**
- * Created by LuizCavalieri on 30/01/2017.
+ * Created by luizcavalieri on 30/01/2017.
  */
 import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
 import { JwtHelper } from 'angular2-jwt';
-
+import { JWT_TOKEN_NAME } from '../app.constants';
 
 @Injectable()
 export class AuthGuardService implements CanActivate {

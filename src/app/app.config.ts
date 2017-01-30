@@ -6,9 +6,8 @@ declare let jQuery: any;
 @Injectable()
 export class AppConfig {
     config = {
-        name: 'Acme Email',
-        title: 'A shine new for messaging',
+        name: 'AcmeEmail',
+        title: 'A shine new for App messaging',
         version: '1.0.0'
     };
 }
-

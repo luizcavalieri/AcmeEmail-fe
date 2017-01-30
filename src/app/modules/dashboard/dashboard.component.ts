@@ -13,8 +13,10 @@ export class DashboardComponent implements OnInit {
 
     public services: OurServicesModel [] = [];
 
+
     constructor(public translateService: TranslateService) {
     }
+
 
     ngOnInit(): void {
 
@@ -69,7 +71,5 @@ export class DashboardComponent implements OnInit {
         this.services.push(service);
     }
 
-    removeClassHiddenDoubleModal(){
-        jQuery('#contactUsModalComponent').removeClass('hidden-xs-up');
-    }
+
 }

@@ -1,4 +1,5 @@
-# IoT Software Angular 2.0 Seed Project
+#Acme Email
+
 ### Quick start
 **Make sure you have Node version >= 5.0 and NPM >= 3**
 > Clone/Download the repo then edit `app.ts` inside [`/src/app/app.ts`](/src/app/app.ts)
@@ -157,9 +158,9 @@ import * as _ from 'lodash';
 ```
 
 # Support, Questions, or Feedback
-> Contact us anytime for anything about this Sing App or Angular 2 consulting.
+> Contact us anytime for anything about this App or Angular 2 consulting.
 
-* [Email: hsousa@iot.software](mailto:hsousa@iot.software)
+* [Email: luiz@interactivehippo.com.au](mailto:luiz@interactivehippo.com.au)
 
 
 This project is based on [angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter).

@@ -14,9 +14,6 @@ export const routes: Routes = [
         path: 'error', component: ErrorComponent
     },
     {
-        path: 'contact-us', loadChildren: () => System.import('./modules/contact/contact.module.ts')
-    },
-    {
         path: '**', component: ErrorComponent
 
     }

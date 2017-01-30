@@ -8,7 +8,7 @@ import { TranslateService } from 'ng2-translate';
 import { PageScrollConfig } from 'ng2-page-scroll';
 import { Router, NavigationEnd, Event } from '@angular/router';
 
-declare let ga: Function;
+// declare let ga: Function;
 
 /*
  * App Component
@@ -28,10 +28,10 @@ export class AppComponent implements OnInit {
 
         this.router.events.subscribe(
             (event: Event) => {
-                // Todo @Luiz - please explain what this statement is doing
+
                 if (event instanceof NavigationEnd)
                 {
-                    ga('send', 'pageview', event.urlAfterRedirects);
+                    // ga('send', 'pageview', event.urlAfterRedirects);
                 }
             });
 

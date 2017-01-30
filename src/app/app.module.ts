@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { MySharedModule } from './shared/my-shared.module';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
-import ContactUsModule from './modules/contact/contact.module';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -22,6 +21,7 @@ import ContactUsModule from './modules/contact/contact.module';
 const APP_PROVIDERS = [
     ...APP_RESOLVER_PROVIDERS,
     AppState
+
 
 ];
 
@@ -54,8 +54,7 @@ type StoreType = {
             ),
             deps: [Http]
         }),
-        MySharedModule,
-        ContactUsModule
+        MySharedModule
     ],
     providers: [ // expose our Services and Providers into Angular's dependency injection
         ENV_PROVIDERS,
