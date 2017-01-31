@@ -20,6 +20,10 @@
   letter-spacing: 0.89px;
   font-family: lato-light, sans-serif;
   color: #FFFFFF;
+  width: 100%;
+  float: right;
+  padding-top: 20px;
+  margin-top: 20px;
 
   @include font-size-bp-down(64px, 54px, 30px);
 
@@ -31,29 +35,6 @@
 
   @include font-size-bp-down(18px, 18px, 16px);
 
-}
-
-// Carousel
-.carousel-item {
-  height: 70vh;
-
-  @include media-breakpoint-down(xl) {
-    min-height: 560px;
-
-  }
-
-  @include media-breakpoint-down(lg) {
-    min-height: 460px
-  }
-
-  .sided {
-    @include media-breakpoint-down(xl) {
-      margin-left: 100px;
-    }
-    @include media-breakpoint-down(lg) {
-      margin-left: 10px;
-    }
-  }
 }
 
 // Jumbotron
@@ -105,152 +86,6 @@
   }
 }
 
-/*
-  Cards
-
- */
-
-.card {
-  position: relative;
-  display: block;
-  margin-bottom: $card-spacer-y;
-  background-color: $card-bg;
-  border: none;
-}
-
-.card-block {
-  @include clearfix;
-  padding: $card-spacer-x;
-}
-
-.card-title {
-  font-family: lato-semi-bold, sans-serif;
-  margin-bottom: $card-spacer-y;
-
-  @include font-size-bp-down(18px, 16px, 16px)
-
-}
-
-.card-text {
-  font-family: lato-regular, sans-serif;
-  color: #848689;
-  line-height: 24px;
-  letter-spacing: 0.55px;
-
-  @include font-size-bp-down(16px, 14px, 14px);
-}
-
-/*
- * Images
- *
- */
-
-@mixin images($url-xl,$url-lg) {
-  @include media-breakpoint-down(xl) {
-    content: url($url-xl);
-  }
-  @include media-breakpoint-down(lg) {
-    content: url($url-lg);
-  }
-
-}
-
-
-.art-web_development {
-  width: 220px;
-  height: 164px;
-  @include images(
-                  '../../assets/img/art_web_development.png',
-                  '../../assets/img/art_web_development_hd.png'
-  );
-
-}
-
-.art-mobile_development {
-  width: 137px;
-  height: 270px;
-  @include images(
-                  '../../assets/img/art_mobile_development.png',
-                  '../../assets/img/art_mobile_development_hd.png'
-  );
-
-}
-
-.art-technology {
-  width: 194px;
-  height: 194px;
-  @include images(
-                  '../../assets/img/art_technology_hd.png',
-                  '../../assets/img/art_technology.png'
-  );
-}
-
-.art-hosting {
-  width: 200px;
-  height: 149px;
-
-  @include images(
-                  '../../assets/img/art_hosting_hd.png',
-                  '../../assets/img/art_hosting.png'
-  );
-}
-
-.art-outsourcing {
-  width: 174px;
-  height: 174px;
-  @include images(
-                  '../../assets/img/art_outsourcing_hd.png',
-                  '../../assets/img/art_outsourcing.png'
-  );
-}
-
-.art-api {
-  width: 146px;
-  height: 92px;
-  @include images(
-                  '../../assets/img/art_api_hd.png',
-                  '../../assets/img/art_api.png'
-  );
-}
-
-.art-project_rescue {
-  width: 165px;
-  height: 165px;
-  @include images(
-                  '../../assets/img/art_project_rescue_hd.png',
-                  '../../assets/img/art_project_rescue.png'
-  );
-}
-
-/*work session*/
-
-.work-container {
-  width: 100%;
-}
-
-@media only screen and (min-width: 1200px) {
-  .work-container {
-    width: 80%;
-    margin: auto;
-  }
-
-}
-
-#work {
-  width: 100%;
-  margin: auto;
-  padding: 0 !important;
-}
-
-.work-1 {
-  //background-image: url("../../../assets/img/work_1.jpg");
-  //background-position: center;
-  //background-repeat: no-repeat;
-  //background-size: cover;
-  width: 100%;
-  height: auto;
-}
-
 .no-padding {
   padding: 0 !important;
 }
@@ -260,3 +95,107 @@
     margin-bottom: 30px;
   }
 }
+
+
+.huge {
+  font-size: 40px;
+  float: right;
+}
+
+
+.panel-green {
+  border-color: #5cb85c;
+}
+
+.panel-green .panel-heading {
+  border-color: #5cb85c;
+  color: #fff;
+  background-color: #5cb85c;
+}
+
+.panel-green a {
+  color: #5cb85c;
+}
+
+.panel-green a:hover {
+  color: #3d8b3d;
+}
+
+.panel-red {
+  border-color: #d9534f;
+}
+
+.panel-red .panel-heading {
+  border-color: #d9534f;
+  color: #fff;
+  background-color: #d9534f;
+}
+
+.panel-red a {
+  color: #d9534f;
+}
+
+.panel-red a:hover {
+  color: #b52b27;
+}
+
+.panel-yellow {
+  border-color: #f0ad4e;
+}
+
+.panel-yellow .panel-heading {
+  border-color: #f0ad4e;
+  color: #fff;
+  background-color: #f0ad4e;
+  min-height: 80px;
+}
+
+.panel-yellow a {
+  color: #f0ad4e;
+}
+
+.panel-yellow a:hover {
+  color: #df8a13;
+}
+
+
+.small-font{
+  font-weight:100;
+  letter-spacing: 1px;
+
+}
+
+.panel-pink {
+  border-color: #e0136f;
+}
+
+.panel-pink .panel-heading {
+  border-color: #e0136f;
+  color: #fff;
+  background-color: #e0136f;
+  min-height: 80px;
+}
+
+.panel-pink a {
+  color: #e0136f;
+}
+
+.panel-heading{
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.text-card-count{
+  margin-left: 5px;
+}
+
+.panel {
+  margin-right: 5px;
+  position: relative;
+  top: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
+  min-width: 200px;
+
+}
+

@@ -1,11 +1,17 @@
-<div id="layout" class="row row-offcanvas row-offcanvas-right main-section" [ngClass]="{'active': openedSideBar}">
+<div id="layout" class="row main-section" >
 
-    <div class="col-xs-12 col-sm-12">
-        <navbar-component (onToggleSideBar)="toggleSideBar()"></navbar-component>
+    <div class="col-xs-4 col-sm-4">
+        <sidebar-component></sidebar-component>
+    </div>
 
-        <router-outlet></router-outlet>
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="sidebar-offcanvas hidden-md-up" id="sidebar" [ngClass]="{'hidden-xs-up': !openedSideBar}">
-        <sidebar-component (onToggleSideBar)="toggleSideBar()"></sidebar-component>
-    </div>
+
 </div>

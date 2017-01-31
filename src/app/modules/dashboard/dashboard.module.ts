@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MySharedModule } from '../../shared/my-shared.module';
-import { CheckboxModule, DropdownModule, ButtonModule } from 'primeng/primeng';
+import {  CheckboxModule, DropdownModule, ButtonModule } from 'primeng/primeng';
+
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { CheckboxModule, DropdownModule, ButtonModule } from 'primeng/primeng';
         DashboardRoutingModule,
         CheckboxModule,
         DropdownModule,
-        ButtonModule
+        ButtonModule,
+
     ],
     declarations: [
         DashboardComponent

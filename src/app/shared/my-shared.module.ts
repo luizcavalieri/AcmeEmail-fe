@@ -8,7 +8,8 @@ import { AlertModule } from 'ng2-bootstrap';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { FloatingDirective } from '../directives/floating-directive';
 import { SharedModule } from 'primeng/components/common/shared';
-import { InputTextModule, InputTextareaModule, CheckboxModule } from 'primeng/primeng';
+import { InputTextModule, InputTextareaModule, CheckboxModule, DataTableModule } from 'primeng/primeng';
+
 
 @NgModule({
     imports: [
@@ -32,7 +33,9 @@ import { InputTextModule, InputTextareaModule, CheckboxModule } from 'primeng/pr
         SharedModule,
         InputTextModule,
         InputTextareaModule,
-        CheckboxModule
+        CheckboxModule,
+        DataTableModule,
+
     ]
 })
 export class MySharedModule {

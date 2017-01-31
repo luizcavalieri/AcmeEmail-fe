@@ -10,6 +10,7 @@ export class LayoutComponent implements OnInit {
     public openedSideBar: boolean = false;
 
     ngOnInit(): void {
+
     }
 
     toggleSideBar() {
