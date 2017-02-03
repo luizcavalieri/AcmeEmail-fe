@@ -7,11 +7,13 @@
   height: 80vh;
 
   @include media-breakpoint-down(xl) {
-    min-height: 648px
+    min-height: 648px;
+    width:100%;
   }
 
   @include media-breakpoint-down(lg) {
-    min-height: 540px
+    min-height: 540px;
+    width:100%;
   }
 
   padding: 0;
@@ -85,6 +87,10 @@ body {
   padding-left: 250px;
 }
 
+div#wrapper{
+  width: 100%;
+}
+
 #sidebar-wrapper {
   z-index: 1000;
   position: fixed;
@@ -101,7 +107,7 @@ body {
 }
 
 #wrapper.toggled #sidebar-wrapper {
-  width: 250px;
+  width: 100%;
 }
 
 #page-content-wrapper {
@@ -177,7 +183,7 @@ body {
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    width: 0;
+    width: 10px;
   }
 
   #page-content-wrapper {

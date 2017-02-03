@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { MySharedModule } from './shared/my-shared.module';
-import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+import { FormsModule } from '@angular/forms';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -45,16 +45,9 @@ type StoreType = {
         HttpModule,
         CoreModule,
         AppRoutingModule,
-        TranslateModule.forRoot({
-            provide: TranslateLoader,
-            useFactory: (http: Http) => new TranslateStaticLoader(
-                http,
-                '/assets/i18n',
-                '.json'
-            ),
-            deps: [Http]
-        }),
-        MySharedModule
+        MySharedModule,
+        FormsModule
+
     ],
     providers: [ // expose our Services and Providers into Angular's dependency injection
         ENV_PROVIDERS,

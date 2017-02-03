@@ -1,238 +1,220 @@
-import { Component, OnInit } from '@angular/core';
-import { OurServicesModel } from '../../model/our-services.model';
-import { TranslateService } from 'ng2-translate';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { MessageModel } from '../../model/message.model';
-import { EMessageType } from '../../model/enums/message-type.enum';
-import { EMessageStatus } from '../../model/enums/message-status.enum';
-import { BabyModel } from '../../model/baby.model';
+import { MessagesService } from '../../service/messages.service';
 
-declare var jQuery: any;
 
 @Component({
     selector: 'dashboard-component',
     templateUrl: 'dashboard.component.html',
-    styleUrls: ['dashboard.style.scss']
+    styleUrls: ['dashboard.style.scss'],
+
 })
 export class DashboardComponent implements OnInit {
 
-    public services: OurServicesModel [] = [];
-    public messages: MessageModel [] = [];
-    public baby: BabyModel;
 
-    public eMessageType: EMessageType;
-    public eMessageStatus: EMessageStatus;
-
+    // @Output()
     public messagesSent: MessageModel [] = [];
+
+    public messages: MessageModel [] = [];
+
+    public errorMessage: any;
+
+    @Input()
+    selectedMessageToo: MessageModel;
+
+    public selectedMessage: MessageModel;
 
     public messagesScheduled: MessageModel [] = [];
 
-
-    constructor(public translateService: TranslateService) {
+    constructor(public messagesService: MessagesService) {
 
         this.initializeMessages();
 
         this.numberOfSent();
-
-        console.log(this.initializeMessages());
-
     }
-
 
     ngOnInit(): void {
 
-
     }
 
-    initializeMessages(){
+
+    initializeMessages() {
 
         this.messages = [
             {
                 id: '1',
                 name: 'John',
-                messageType: 0,
+                messageType: 'Birthday',
                 dateSchedule: '01/02/2017',
-                status: 0,
+                status: 'Sent',
                 gift: '',
-                baby:
-                    {
-                        babyName: '',
-                        dateOfBirth: ''
-                    }
+                baby: {
+                    babyName: '',
+                    dateOfBirth: ''
+                }
 
             },
             {
                 id: '2',
                 name: 'Mary',
-                messageType: 0,
+                messageType: 'Birthday',
                 dateSchedule: '31/01/2017',
-                status: 0,
+                status: 'Sent',
                 gift: '',
-                baby:
-                    {
-                        babyName: '',
-                        dateOfBirth: ''
-                    }
+                baby: {
+                    babyName: '',
+                    dateOfBirth: ''
+                }
 
             },
             {
                 id: "3",
                 name: 'Philip',
-                messageType: 0,
+                messageType: 'Baby Birth',
                 dateSchedule: '04/02/2017',
-                status: 1,
+                status: 'Sent',
                 gift: "",
-                baby:
-                    {
-                        babyName: "",
-                        dateOfBirth: ""
-                    }
+                baby: {
+                    babyName: "",
+                    dateOfBirth: ""
+                }
 
             },
             {
                 id: "4",
                 name: 'Michael',
-                messageType: 0,
+                messageType: 'Birthday',
                 dateSchedule: '26/01/2017',
-                status: 0,
+                status: 'Scheduled',
                 gift: "",
-                baby:
-                    {
-                        babyName: "",
-                        dateOfBirth: ""
-                    }
+                baby: {
+                    babyName: "",
+                    dateOfBirth: ""
+                }
 
             },
             {
                 id: "5",
                 name: 'Martin',
-                messageType: 0,
+                messageType: 'Baby Birth',
                 dateSchedule: '20/01/2017',
-                status: 0,
+                status: 'Scheduled',
                 gift: "",
-                baby:
-                    {
-                        babyName: "",
-                        dateOfBirth: ""
-                    }
+                baby: {
+                    babyName: "",
+                    dateOfBirth: ""
+                }
 
             },
             {
                 id: "6",
                 name: 'Lewis',
-                messageType: 0,
+                messageType: 'Birthday',
                 dateSchedule: '28/01/2017',
-                status: 0,
+                status: 'Scheduled',
                 gift: '',
-                baby:
-                    {
-                        babyName: '',
-                        dateOfBirth: ''
-                    }
+                baby: {
+                    babyName: '',
+                    dateOfBirth: ''
+                }
 
             },
             {
                 id: '7',
                 name: 'Paul',
-                messageType: 0,
+                messageType: 'Birthday',
                 dateSchedule: '01/03/2017',
-                status: 1,
+                status: 'Sent',
                 gift: '',
-                baby:
-                    {
-                        babyName: '',
-                        dateOfBirth: ''
-                    }
+                baby: {
+                    babyName: '',
+                    dateOfBirth: ''
+                }
 
             },
             {
                 id: '8',
                 name: 'Jane',
-                messageType: 0,
+                messageType: 'Birthday',
                 dateSchedule: '24/02/2017',
-                status: 1,
+                status: 'Sent',
                 gift: '',
-                baby:
-                    {
-                        babyName: '',
-                        dateOfBirth: ''
-                    }
+                baby: {
+                    babyName: '',
+                    dateOfBirth: ''
+                }
 
             },
             {
                 id: '9',
                 name: 'Nancy',
-                messageType: 0,
+                messageType: 'Baby Birth',
                 dateSchedule: '14/05/2017',
-                status: 1,
+                status: 'Sent',
                 gift: '',
-                baby:
-                    {
-                        babyName: '',
-                        dateOfBirth: ''
-                    }
+                baby: {
+                    babyName: '',
+                    dateOfBirth: ''
+                }
 
             },
             {
                 id: '10',
                 name: 'Popy',
-                messageType: 0,
+                messageType: 'Birthday',
                 dateSchedule: '10/01/2017',
-                status: 0,
+                status: 'Scheduled',
                 gift: '',
-                baby:
-                    {
-                        babyName: '',
-                        dateOfBirth: ''
-                    }
+                baby: {
+                    babyName: '',
+                    dateOfBirth: ''
+                }
 
             },
             {
                 id: '11',
                 name: 'Jenifer',
-                messageType: 0,
+                messageType: 'Birthday',
                 dateSchedule: '12/03/2017',
-                status: 1,
+                status: 'Sent',
                 gift: '',
-                baby:
-                    {
-                        babyName: '',
-                        dateOfBirth: ''
-                    }
+                baby: {
+                    babyName: '',
+                    dateOfBirth: ''
+                }
 
             },
             {
                 id: '12',
                 name: 'Mary',
-                messageType: 0,
+                messageType: 'Baby Birth',
                 dateSchedule: '08/07/2017',
-                status: 1,
+                status: 'Sent',
                 gift: '',
-                baby:
-                    {
-                        babyName: '',
-                        dateOfBirth: ''
-                    }
+                baby: {
+                    babyName: '',
+                    dateOfBirth: ''
+                }
 
             },
             {
                 id: '13',
                 name: 'Ashley',
-                messageType: 0,
+                messageType: 'Baby Birth',
                 dateSchedule: '08/01/2017',
-                status: 0,
+                status: 'Scheduled',
                 gift: '',
-                baby:
-                    {
-                        babyName: '',
-                        dateOfBirth: ''
-                    }
+                baby: {
+                    babyName: '',
+                    dateOfBirth: ''
+                }
 
             }
 
         ];
     }
 
-    numberOfSent(){
+    numberOfSent() {
 
         let index = 0;
 
@@ -240,53 +222,28 @@ export class DashboardComponent implements OnInit {
 
         console.log(this.messages[index].status);
 
-        while(this.messages[index]){
+        while (this.messages[index])
+        {
 
-            if(this.messages[index].status === 0){
+            if (this.messages[index].status === 'Sent')
+            {
 
                 this.messagesSent.push(this.messages[index]);
-            }else if(this.messages[index].status === 1){
+            } else if (this.messages[index].status === 'Scheduled')
+            {
 
                 this.messagesScheduled.push(this.messages[index]);
-            }else{
+            } else
+            {
                 throw error;
             }
 
-            index ++;
+            index++;
 
         }
 
 
     }
-
-    // addService(section: string) {
-    //     // Create instance of Services Model
-    //     let service: OurServicesModel = new OurServicesModel();
-    //
-    //     // Calculate Title and Text keys based on the section name
-    //     let cartTitleKey = `ourservices.${section}.cardtitle`;
-    //     let cartTextKey = `ourservices.${section}.cardtext`;
-    //
-    //     // Pull translated String
-    //     this.translateService.get(
-    //         [
-    //             cartTitleKey,
-    //             cartTextKey
-    //         ]
-    //     ).subscribe(
-    //         value => {
-    //             service.cardTitle = value[cartTitleKey];
-    //             service.cardText = value[cartTextKey];
-    //         }
-    //     );
-    //
-    //     // Set img Class Name
-    //     service.imgClass = `art-${section}`;
-    //     service.imgSrc = `../../assets/img/art_${section}_hd.png`;
-    //
-    //     // Add Service to the List
-    //     this.services.push(service);
-    // }
 
 
 }

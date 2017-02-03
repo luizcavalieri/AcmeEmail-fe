@@ -1,0 +1,33 @@
+<table class="table table-responsive table-striped">
+    <thead>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Status</th>
+    <th>Date</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let message of messagesScheduled"
+        (click)="onSelect(message)"
+        [class.selected]="message === selectedMessage">
+        <td>
+            <button class="btn btn-outline-success" (click)="btnClick(message)"> {{ message.name }}</button>
+            <!--<button class="btn btn-outline-success" (click)="selectedChange.emit(message)"> {{ message.name }}</button>-->
+        </td>
+        <td>{{ message.messageType }}</td>
+        <td>{{ message.status }}</td>
+        <td>{{ message.dateSchedule }}</td>
+    </tr>
+
+    </tbody>
+
+
+</table>
+
+<div *ngIf="selectedMessage">
+    <h2>{{selectedMessage.name}} details!</h2>
+    <div><label>id: </label>{{selectedMessage.id}}</div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="selectedMessage.name" placeholder="name"/>
+    </div>
+</div>

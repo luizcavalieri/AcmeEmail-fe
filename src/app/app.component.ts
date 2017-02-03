@@ -6,9 +6,8 @@ import { AppState } from './app.service';
 import { BaseService } from './service/base.service';
 import { TranslateService } from 'ng2-translate';
 import { PageScrollConfig } from 'ng2-page-scroll';
-import { Router, NavigationEnd, Event } from '@angular/router';
+import { Router, NavigationEnd, Event} from '@angular/router';
 
-// declare let ga: Function;
 
 /*
  * App Component
@@ -20,11 +19,12 @@ import { Router, NavigationEnd, Event } from '@angular/router';
     styleUrls: [
         './scss/application.scss'
     ],
-    templateUrl: 'app.component.html'
+    templateUrl: 'app.component.html',
+
 })
 export class AppComponent implements OnInit {
 
-    constructor(public appState: AppState, public baseService: BaseService, translateService: TranslateService, public router: Router) {
+    constructor(public appState: AppState, public baseService: BaseService, public router: Router) {
 
         this.router.events.subscribe(
             (event: Event) => {
@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
                 }
             });
 
-        translateService.use('en');
+
 
         PageScrollConfig.defaultDuration = 500;
     }

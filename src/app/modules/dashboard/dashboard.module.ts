@@ -3,6 +3,8 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MySharedModule } from '../../shared/my-shared.module';
 import {  CheckboxModule, DropdownModule, ButtonModule } from 'primeng/primeng';
+import { MessageDetailComponent } from './detail/message-detail.component';
+import { MessageListComponent } from './list/message-list.component';
 
 
 
@@ -16,7 +18,9 @@ import {  CheckboxModule, DropdownModule, ButtonModule } from 'primeng/primeng';
 
     ],
     declarations: [
-        DashboardComponent
+        DashboardComponent,
+        MessageDetailComponent,
+        MessageListComponent
     ]
 })
 export default class DashboardModule {
