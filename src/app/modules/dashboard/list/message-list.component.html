@@ -27,22 +27,94 @@
 
     <div class="col-lg-6">
         <div *ngIf="selectedMessage">
-            <h2>{{selectedMessage.name}} details!</h2>
+            <h2>{{selectedMessage.name}}</h2>
+
             <div>
-                <label>id: </label> {{selectedMessage.id}}
-            </div>
-            <div>
-                <label>name: </label>
-                <input [(ngModel)]="selectedMessage.name" placeholder="name"/>
+                <label for="name">Name: </label>
+                <input type="text"
+                       name="messageType"
+                       id="name"
+                       [(ngModel)]="selectedMessage.name"
+                       placeholder="name"/>
+
+                <br/>
+
+                <label for="messageType">Message Type: </label>
+                <input type="text"
+                       name="messageType"
+                       id="messageType"
+                       placeholder="Message Type"
+                       [(ngModel)]="selectedMessage.messageType"/>
                 <br/><br/>
-                <label>Message Type: </label>
-                <input [(ngModel)]="selectedMessage.messageType" placeholder="name"/>
-                <br/><br/>
-                <span>{{ selectedMessage.status }} to  {{ selectedMessage.dateSchedule }}</span>
+
+                <span *ngIf="selectedMessage.messageType === 'Baby Birth'">
+
+                    <label for="babyName">Baby Name</label>
+                    <input type="text"
+                           name="babyName"
+                           id="babyName"
+                           placeholder="Baby Name"
+                           [(ngModel)]="selectedMessage.baby.babyName"/>
+
+                    <label for="babyDOB">Baby DOB</label>
+                    <input type="text"
+                           name="babyDOB"
+                           id="babyDOB"
+                           placeholder="Baby Name"
+                           [(ngModel)]="selectedMessage.baby.dateOfBirth"/>
+                </span>
+
+                <span *ngIf="selectedMessage.messageType === 'Birthday'">
+
+                    <label for="gift">Gift</label>
+
+                    <p-autoComplete id="gift"
+                                    [(ngModel)]="selectedMessage.gift"
+                                    [suggestions]="filteredGifts"
+                                    (completeMethod)="getGifts($event)"
+                                    [size]="30"
+                                    [minLength]="1"
+                                    placeholder="Start typing..."
+                                    >
+
+                    </p-autoComplete>
 
 
+                    <!--<select name="gift"-->
+                            <!--id="gift"-->
+                            <!--placeholder="Gift"-->
+                            <!--([ngModel])="selectedMessage.gift">-->
+                        <!--<option *ngFor="let gift of giftsToChoose"-->
+                                <!--[ngValue]="gift.title">-->
+                            <!--{{ gift.title }}-->
+                        <!--</option>-->
+                    <!--</select>-->
+
+
+
+                </span>
+
+                <br/><br/>
+
+                <p>{{ selectedMessage.status }} to {{ selectedMessage.dateSchedule }}</p>
+
+                <h4>Message</h4>
+
+                <p *ngIf="selectedMessage.messageType === 'Birthday' && selectedMessage.gift !== ''">
+                    Mate, happy Birthday.
+                    <br/> To celebrate this once a year occasion we have picked the following gift:
+                    {{ selectedMessage.gift }}.
+                    <br/> Enjoy.
+                </p>
+
+                <p *ngIf="selectedMessage.messageType === 'Baby Birth' &&
+                (selectedMessage.baby.babyName !== '' && selectedMessage.baby.dateOfBirth !== '')">
+                    Whooa well done and congratulations on the birth of {{ selectedMessage.baby.babyName }} on
+                    {{ selectedMessage.baby.dateOfBirth }}.
+                </p>
             </div>
         </div>
     </div>
 
 </div>
+

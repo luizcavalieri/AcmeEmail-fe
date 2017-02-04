@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MySharedModule } from '../../shared/my-shared.module';
-import {  CheckboxModule, DropdownModule, ButtonModule } from 'primeng/primeng';
+import { AutoCompleteModule, CheckboxModule, DropdownModule, ButtonModule } from 'primeng/primeng';
 import { MessageDetailComponent } from './detail/message-detail.component';
 import { MessageListComponent } from './list/message-list.component';
 
@@ -15,6 +15,7 @@ import { MessageListComponent } from './list/message-list.component';
         CheckboxModule,
         DropdownModule,
         ButtonModule,
+        AutoCompleteModule,
 
     ],
     declarations: [
