@@ -46,7 +46,7 @@ export class DashboardComponent implements OnInit {
                 name: 'John',
                 messageType: 'Birthday',
                 dateSchedule: '01/02/2017',
-                status: 'Sent',
+                status: 'Scheduled',
                 gift: '',
                 baby: {
                     babyName: '',
@@ -72,7 +72,7 @@ export class DashboardComponent implements OnInit {
                 name: 'Philip',
                 messageType: 'Baby Birth',
                 dateSchedule: '04/02/2017',
-                status: 'Sent',
+                status: 'Scheduled',
                 gift: "",
                 baby: {
                     babyName: "",
@@ -85,7 +85,7 @@ export class DashboardComponent implements OnInit {
                 name: 'Michael',
                 messageType: 'Birthday',
                 dateSchedule: '26/01/2017',
-                status: 'Scheduled',
+                status: 'Sent',
                 gift: "",
                 baby: {
                     babyName: "",
@@ -98,7 +98,7 @@ export class DashboardComponent implements OnInit {
                 name: 'Martin',
                 messageType: 'Baby Birth',
                 dateSchedule: '20/01/2017',
-                status: 'Scheduled',
+                status: 'Sent',
                 gift: "",
                 baby: {
                     babyName: "",
@@ -111,7 +111,7 @@ export class DashboardComponent implements OnInit {
                 name: 'Lewis',
                 messageType: 'Birthday',
                 dateSchedule: '28/01/2017',
-                status: 'Scheduled',
+                status: 'Sent',
                 gift: '',
                 baby: {
                     babyName: '',
@@ -124,7 +124,7 @@ export class DashboardComponent implements OnInit {
                 name: 'Paul',
                 messageType: 'Birthday',
                 dateSchedule: '01/03/2017',
-                status: 'Sent',
+                status: 'Scheduled',
                 gift: '',
                 baby: {
                     babyName: '',
@@ -137,7 +137,7 @@ export class DashboardComponent implements OnInit {
                 name: 'Jane',
                 messageType: 'Birthday',
                 dateSchedule: '24/02/2017',
-                status: 'Sent',
+                status: 'Scheduled',
                 gift: '',
                 baby: {
                     babyName: '',
@@ -150,7 +150,7 @@ export class DashboardComponent implements OnInit {
                 name: 'Nancy',
                 messageType: 'Baby Birth',
                 dateSchedule: '14/05/2017',
-                status: 'Sent',
+                status: 'Scheduled',
                 gift: '',
                 baby: {
                     babyName: '',
@@ -163,7 +163,7 @@ export class DashboardComponent implements OnInit {
                 name: 'Popy',
                 messageType: 'Birthday',
                 dateSchedule: '10/01/2017',
-                status: 'Scheduled',
+                status: 'Sent',
                 gift: '',
                 baby: {
                     babyName: '',
@@ -175,7 +175,7 @@ export class DashboardComponent implements OnInit {
                 id: '11',
                 name: 'Jenifer',
                 messageType: 'Birthday',
-                dateSchedule: '12/03/2017',
+                dateSchedule: '12/03/2016',
                 status: 'Sent',
                 gift: '',
                 baby: {
@@ -188,7 +188,7 @@ export class DashboardComponent implements OnInit {
                 id: '12',
                 name: 'Mary',
                 messageType: 'Baby Birth',
-                dateSchedule: '08/07/2017',
+                dateSchedule: '31/12/2016',
                 status: 'Sent',
                 gift: '',
                 baby: {
@@ -202,7 +202,7 @@ export class DashboardComponent implements OnInit {
                 name: 'Ashley',
                 messageType: 'Baby Birth',
                 dateSchedule: '08/01/2017',
-                status: 'Scheduled',
+                status: 'Sent',
                 gift: '',
                 baby: {
                     babyName: '',

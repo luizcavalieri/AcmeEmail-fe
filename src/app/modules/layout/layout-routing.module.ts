@@ -8,7 +8,10 @@ const routes: Routes = [
         path: '',
         component: LayoutComponent,
         children: [
-            { path: '', loadChildren: () => System.import('../dashboard/dashboard.module') }
+            {
+                path: '',
+                loadChildren: () => System.import('../dashboard/dashboard.module')
+            }
         ]
     }
 ];
