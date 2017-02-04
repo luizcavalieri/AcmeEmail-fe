@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ErrorComponent } from './error.component.ts';
+import { ErrorComponent } from './error.component';
 import { MySharedModule } from '../../shared/my-shared.module';
 
 export const routes = [

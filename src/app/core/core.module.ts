@@ -3,7 +3,6 @@
  */
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UsersService } from 'app/service/users.service';
 import { LoggingService } from 'app/service/logging.service';
 import { BaseService } from 'app/service/base.service';
 import { JWT_TOKEN_NAME } from 'app/app.constants';

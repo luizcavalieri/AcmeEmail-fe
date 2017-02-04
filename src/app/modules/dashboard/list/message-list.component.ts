@@ -2,7 +2,6 @@
  * Created by luizcavalieri on 3/2/17.
  */
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { OurServicesModel } from '../../model/our-services.model';
 import { MessageModel } from '../../../model/message.model';
 import { GiftModel } from '../../../model/gifts.model';
 
