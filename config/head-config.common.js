@@ -47,7 +47,7 @@ module.exports = {
         },
         {
             name: 'description',
-            content: 'We are specialised in custom software development - if you want a tailored and unique software solution we are here to assist your business.'
+            content: 'A bright new to send emails.'
         }
     ]
 };
