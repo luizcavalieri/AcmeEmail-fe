@@ -9,6 +9,7 @@ import { BaseService } from 'app/service/base.service';
 import { JWT_TOKEN_NAME } from 'app/app.constants';
 import { provideAuth, JwtHelper } from 'angular2-jwt';
 import { AuthGuardService } from '../service/auth-guard.service';
+import { MessagesService } from '../service/messages.service';
 
 const authHttpProvider = provideAuth({
     headerName: 'Authorization',
@@ -27,7 +28,7 @@ const authHttpProvider = provideAuth({
         AuthGuardService,
         JwtHelper,
         LoggingService,
-
+        MessagesService,
         BaseService
     ]
 })

@@ -8,13 +8,24 @@ export class MessageModel {
     id: string;
 
     name: string;
-    messageType: EMessageType;
+    messageType: string;
     dateSchedule: string;
-    status: EMessageStatus;
+    status: string;
     gift: string;
     baby: BabyModel;
 
+    static create(data){
+        return new MessageModel(data);
+    }
 
-    constructor() {
+    constructor(data){
+        this.id = data._id;
+        this.messageType = data.messageType;
+        this.name = data.name;
+        this.dateSchedule = data.dateSchedule;
+        this.status = data.status;
+        this.gift = data.gift;
+        this.baby = data.baby;;
+
     }
 }
